@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tested</title>
+  <script
+    src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+    crossorigin="anonymous"
+  ></script>
+  <style>
+    #root {
+        display: flex;
+        flex-direction: column;
+        row-gap: 0.2em;
+    }
+
+    .btn {
+        width: 5em;
+    }
+  </style>
+</head>
+<body>
+  <div id="root">
+    <button class="btn">1</button>
+    <button class="btn">2</button>
+    <button class="btn">3</button>
+  </div>
+  <script>
+      $(document).ready(function () {
+          $('.btn').click(function () {
+              const first = $('#root').children('.btn')[0]
+              first.remove()
+              $('#root').append(first)
+          })
+      })
+  </script>
+</body>
+</html>

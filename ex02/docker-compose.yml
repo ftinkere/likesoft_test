@@ -1,0 +1,14 @@
+services:
+  mysql:
+    image: 'mysql/mysql-server:8.0'
+    ports:
+      - '3307:3306'
+    environment:
+      MYSQL_DATABASE: 'tested'
+      MYSQL_USER: 'user'
+      MYSQL_PASSWORD: 'password'
+    volumes:
+      - 'test-mysql:/var/lib/mysql'
+volumes:
+  test-mysql:
+    driver: 'local'
